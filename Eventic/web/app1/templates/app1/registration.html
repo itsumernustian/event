@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<style>
+body {font-family: Arial, Helvetica, sans-serif; background-color: #191919;}
+* {box-sizing: border-box;}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.icon {
+  padding: 10px;
+  background-image: linear-gradient(to right ,#880061,#ef0078);
+  color: white;
+  min-width: 50px;
+  height: 37px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.reg-heading
+{
+	text-align: center;
+	color: #ffff;
+	letter-spacing: 2px;
+}
+hr
+{
+	width: 500px;
+	text-align: center;
+}
+.reg-section
+{
+   max-width:600px;
+   margin:auto;
+   border:2px solid #ef0078;
+   border-radius: 25px;
+   outline: none;
+   padding: 20px 20px;
+}
+.reg-form
+{
+	padding: 20px 40px;
+}
+.get
+{
+	margin-left: 25%;
+	width: 200px;
+	border-radius: 10px;
+	border:none;
+	outline-style: none;
+	color: #ffff;
+	padding: 7px 25px;
+	background-image: linear-gradient(to right ,#880061,#ef0078);
+}
+
+.sign:hover {
+  opacity: 1;
+}
+.gender,.category
+{
+	text-align: center;
+	word-spacing: 10px;
+}
+.gender-label,.category-label
+{
+	color: white;
+}
+</style>
+</head>
+<body>
+<section class="reg-section">
+	<h2 class="reg-heading">Registeration</h2>
+  <hr>
+<form class="reg-form" action="/register" method="POST">
+  {% csrf_token %}
+  <p class="category">
+  	<input  type="radio" id="personal" name="category" value="personal">
+  <label for="personal" class="category-label">Personal</label>
+  <input type="radio" id="organization" name="category" value="organization">
+  <label for="Organization" class="gender-label">Organization</label>
+  </p>
+  <div class="input-container">
+    <i class="fa fa-user icon"></i>
+    <input class="input-field" type="text" placeholder="Name" name="name" required>
+  </div>
+
+  <div class="input-container">
+    <i class="fa fa-envelope icon"></i>
+    <input class="input-field" type=email placeholder="Email" name="email" required>
+  </div>
+  
+  <div class="input-container">
+    <i class="fa fa-key icon"></i>
+    <input class="input-field" type="password" placeholder="Password" name="pwd" required>
+  </div>
+   <div class="input-container">
+    <span class="material-icons icon">phone</span>
+    <input class="input-field" type="text" placeholder="Phone" name="phone" required>
+  </div>
+  <div class="input-container">
+    <span class="material-icons icon">security</span>
+    <input class="input-field" type="text" placeholder="6-digit CMS ID" name="cms_id" required>
+  </div>
+  <p class="gender">
+  	<input type="radio" id="male" name="gender" value="male">
+  <label for="male" class="gender-label">Male</label>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female" class="gender-label">Female</label>
+  </p>
+  <br>
+  <button type="submit" class="get sign">Register</button>
+</form>
+</section>
+
+</body>
+</html>

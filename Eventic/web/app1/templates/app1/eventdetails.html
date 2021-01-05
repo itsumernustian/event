@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Eventic - Web Design & Development Project on Balance</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style1.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+<header class="nav-header">
+	<nav class="navbar navbar-expand-lg  navigation">
+  <a class="navbar-brand nav-logo"  href="#">EVEN<span style="color: red;">TIC</span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor03">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <form class="form-inline my-2 my-lg-1">
+      <a class="nav-link nav-home" href="#">Home
+          <span class="sr-only">(current)</span>
+        </a>
+        <a class="nav-link nav-about" href="#">About us
+          <span class="sr-only">(current)</span>
+        </a>
+        <a class="nav-link nav-sign" href="{% url 'createEvent' %}">Create Event
+          <span class="sr-only">(current)</span>
+        </a>
+      <button type="button" class="get sign">Register</button>
+    </form>
+  </div>
+</nav>
+</header>
+
+<main>
+      <section class="section-1">
+          <section style="width: 60%;">
+              {% for k in con %}
+    <h4 class="eventic-heading">GOOGLE SUMMER OF CODE</h4>
+    <p class="lead">ORGANIZED BY:<br>NUST ACM Student Chapter</p>
+    <hr>
+    <button type="button" class="get-ticket">Get Ticket</button>
+    <h4>Event Overview</h4>
+    <br>
+    <h5>Event Type:{{k.event_type}}|Ticket Price {{k.event_value}}</h5>
+              {% endfor %}
+<blockquote class="blockquote">
+  <p class="mb-0">Google summer of code is a global platform focused oin bringing more student developers into open source software development. Students works with an open source organization on a 3 month programming project  during their break from school.</p>
+</blockquote>
+  </section>
+    <section style="padding-left: 10%;">
+      <p class="lead day-time"><span>03   :  25  :  25</span></p>
+      <p class="lead day-time-format" ><span>Days  :  hours  :  minutes</span></p>
+      <p class="day-time-pictorial">
+        <img src="{% static 'images/calendar.png' %}" width="30px" height="30px">
+      <img src="{% static 'images/chevron.png' %}" height="30px" width="30px">
+      <img src="{% static 'images/venue.png' %}" height="30px" width="30px">
+      </p>
+    </section>
+  </section>
+</main>
+
+</body>
+</html>

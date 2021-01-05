@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Eventic - Web Design & Development Project on Balance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static%}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style1.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+<header class="nav-header">
+	<nav class="navbar navbar-expand-lg  navigation">
+  <a class="navbar-brand nav-logo"  href="#">LOGO</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor03">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <form class="form-inline my-2 my-lg-1">
+      <a class="nav-link nav-home" href="#">Home
+          <span class="sr-only">(current)</span>
+        </a>
+        <a class="nav-link nav-about" href="#">About
+          <span class="sr-only">(current)</span>
+        </a>
+        <a class="nav-link nav-sign" href="{% url 'sign_in' %}">Sign in
+          <span class="sr-only">(current)</span>
+        </a>
+      <button type="button" id="registeration" class="get sign" >Register</button>
+      <script>
+        var btn = document.getElementById('registeration');
+        btn.addEventListener("click",function(){
+        location.href="register";});
+      </script>
+    </form>
+  </div>
+</nav>
+</header>
+
+<main>
+      <section class="section-1">
+          <section>
+    <h1 class="eventic">EVENTIC</h1>
+    <h3>
+  <small class="text-muted">A celebration of success</small>
+</h3>
+<blockquote class="blockquote">
+  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at porttitor lectus. Nunc viverra placerat eros.</p>
+  <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+</blockquote>
+<button type="button" class="get">Get Registered</button>
+<button type="button" class="btn btn-outline-secondary">Learn More</button>
+  </section>
+  <section>
+    {% load static %}
+    <img src="{% static 'images/main illustration.png' %}" alt="My image">
+  </section>
+      </section>
+
+      <section class="section-2">
+        <p>{% load static %}
+    <img src="{% static 'images/chevron.png' %}" alt="My image" class="chevron"><span>View Up coming Event</span></p>
+      </section>
+  <section class="calendar-section">
+    <div class="calendar">
+  <div class="calendar__month">
+    <div class="cal-month__previous"><</div>
+    <div class="cal-month__current" id="cal-month__current"></div>
+    <div class="cal-month__next">></div>
+  </div>
+  <div class="calendar__head">
+    <div class="cal-head__day" id="1"></div>
+    <div class="cal-head__day" id="2"></div>
+    <div class="cal-head__day" id="3"></div>
+    <div class="cal-head__day" id="4"></div>
+    <div class="cal-head__day" id="5"></div>
+    <div class="cal-head__day" id="6"></div>
+    <div class="cal-head__day" id="7"></div>
+  </div>
+  <div class="calendar__body">
+    <div class="cal-body__week">
+      <div class="cal-body__day" id="8"></div>
+      <div class="cal-body__day" id="9"></div>
+      <div class="cal-body__day" id="10"></div>
+      <div class="cal-body__day" id="11"></div>
+      <div class="cal-body__day" id="12"></div>
+      <div class="cal-body__day" id="13"></div>
+      <div class="cal-body__day" id="14"></div>
+    </div>
+    <div class="cal-body__week">
+      <div class="cal-body__day" id="15"></div>
+      <div class="cal-body__day" id="16"></div>
+      <div class="cal-body__day" id="17"></div>
+      <div class="cal-body__day" id="18"></div>
+      <div class="cal-body__day" id="19"></div>
+      <div class="cal-body__day" id="20"></div>
+      <div class="cal-body__day" id="21"></div>
+    </div>
+    <div class="cal-body__week">
+      <div class="cal-body__day" id="22"></div>
+      <div class="cal-body__day" id="23"></div>
+      <div class="cal-body__day" id="24"></div>
+      <div class="cal-body__day" id="25"></div>
+      <div class="cal-body__day" id="26"></div>
+      <div class="cal-body__day" id="27"></div>
+      <div class="cal-body__day" id="28"></div>
+    </div>
+    <div class="cal-body__week">
+      <div class="cal-body__day" id="29"></div>
+      <div class="cal-body__day" id="30"></div>
+      <div class="cal-body__day" id="31"></div>
+      <div class="cal-body__day" id="32"></div>
+      <div class="cal-body__day" id="33"></div>
+      <div class="cal-body__day" id="34"></div>
+      <div class="cal-body__day"></div>
+    </div>
+    <div class="cal-body__week">
+      <div class="cal-body__day"></div>
+      <div class="cal-body__day"></div>
+      <div class="cal-body__day"></div>
+      <div class="cal-body__day"></div>
+      <div class="cal-body__day"></div>
+      <div class="cal-body__day"></div>
+      <div class="cal-body__day"></div>
+    </div>
+    <div class="cal-body__week">
+      <div class="cal-body__day"></div>
+      <div class="cal-body__day"></div>
+      <div class="cal-body__day"></div>
+      <div class="cal-body__day"></div>
+      <div class="cal-body__day"></div>
+      <div class="cal-body__day"></div>
+      <div class="cal-body__day"></div>
+    </div>
+  </div>
+</div>
+
+  </section>
+</main>
+{% load static %}
+<script type="text/javascript" src="{% static 'javascript/calendar.js' %}"></script>
+{% load static %}
+<script type="text/javascript" src="{% static 'javascript/moments.js' %}"></script>
+<script type="text/javascript">
+  var month=document.getElementById('cal-month__current');
+  var one=document.getElementById('1').addEventListener('dbclick',function1);
+  var one=document.getElementById('2').addEventListener('click',function1);
+  var one=document.getElementById('3').addEventListener('click',function1);
+  var one=document.getElementById('4').addEventListener('click',function1);
+  var one=document.getElementById('5').addEventListener('click',function1);
+  var one=document.getElementById('6').addEventListener('click',function1);
+  var one=document.getElementById('7').addEventListener('click',function1);
+  var one=document.getElementById('8').addEventListener('click',function1);
+  var one=document.getElementById('9').addEventListener('click',function1);
+  var one=document.getElementById('10').addEventListener('click',function1);
+  var one=document.getElementById('11').addEventListener('click',function1);
+  var one=document.getElementById('12').addEventListener('click',function1);
+  var one=document.getElementById('13').addEventListener('click',function1);
+  var one=document.getElementById('14').addEventListener('click',function1);
+  var one=document.getElementById('15').addEventListener('click',function1);
+  var one=document.getElementById('16').addEventListener('click',function1);
+  var one=document.getElementById('17').addEventListener('click',function1);
+  var one=document.getElementById('18').addEventListener('click',function1);
+  var one=document.getElementById('19').addEventListener('click',function1);
+  var one=document.getElementById('20').addEventListener('click',function1);
+  var one=document.getElementById('21').addEventListener('click',function1);
+  var one=document.getElementById('22').addEventListener('click',function1);
+  var one=document.getElementById('23').addEventListener('click',function1);
+  var one=document.getElementById('24').addEventListener('click',function1);
+  var one=document.getElementById('25').addEventListener('click',function1);
+  var one=document.getElementById('26').addEventListener('click',function1);
+  var one=document.getElementById('27').addEventListener('click',function1);
+  var one=document.getElementById('28').addEventListener('click',function1);
+  var one=document.getElementById('29').addEventListener('click',function1);
+  var thirty=document.getElementById('30').addEventListener('click',function1);
+  var one=document.getElementById('31').addEventListener('click',function1);
+  var one=document.getElementById('32').addEventListener('click',function1);
+  function function1()
+  {
+    {% for k in con %}
+<!--    var res = month.toString();-->
+<!--    var res = res.slice(0,3) +".";-->
+<!--    var d=thirty.innerHTML;-->
+<!--    var dt="Dec. "+d+", "+"2020";-->
+<!--    document.write(dt);-->
+<!--    var date="{{k.date}}";-->
+<!--    if(dt==date)-->
+<!--    {-->
+     var counter=0;
+      if(counter==0)
+      {
+         alert("Event Title: {{k.event_title}} \nEvent Description: {{k.event_desc}}");
+         counter++;
+      }
+
+<!--    }-->
+    {% endfor %}
+  }
+</script>
+</body>
+</html>

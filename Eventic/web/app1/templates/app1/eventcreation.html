@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<style>
+body {font-family: Arial, Helvetica, sans-serif; background-color: #191919;}
+* {box-sizing: border-box;}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.icon {
+  padding: 10px;
+  background-image: linear-gradient(to right ,#880061,#ef0078);
+  color: white;
+  min-width: 50px;
+  height: 37px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.event-heading
+{
+	text-align: center;
+	color: #ffff;
+	letter-spacing: 2px;
+}
+hr
+{
+	width: 500px;
+	text-align: center;
+}
+.event-section
+{
+   max-width:600px;
+   margin:auto;
+   border:2px solid #ef0078;
+   border-radius: 25px;
+   outline: none;
+   padding: 20px 20px;
+}
+.event-form
+{
+	padding: 20px 40px;
+}
+.get
+{
+	margin-left: 25%;
+	width: 200px;
+	border-radius: 10px;
+	border:none;
+	outline-style: none;
+	color: #ffff;
+	padding: 7px 25px;
+	background-image: linear-gradient(to right ,#880061,#ef0078);
+}
+
+.sign:hover {
+  opacity: 1;
+}
+.event_type,.ticket
+{
+	text-align: center;
+	word-spacing: 10px;
+}
+.event-type-label,.category-label
+{
+	color: white;
+}
+</style>
+</head>
+<body>
+<section class="event-section">
+	<h2 class="event-heading">Create Event</h2>
+  <hr>
+<form class="event-form" action="/createEvent" method="post">
+  {% csrf_token %}
+  <div class="input-container">
+    <i class="fa fa-user icon"></i>
+    <input class="input-field" type="text" placeholder="Event Title" name="event_name" required>
+  </div>
+
+  <div class="input-container">
+    <i class="fa fa-envelope icon"></i>
+    <input class="input-field" type="text" placeholder="Event Head" name="event_head" required>
+  </div>
+   <div class="input-container">
+    <span class="material-icons icon">phone</span>
+    <input class="input-field" type="text" placeholder="Contact No." name="phone" required>
+  </div>
+  <div class="input-container">
+    <i class="fa fa-key icon"></i>
+    <input class="input-field" type="date" placeholder="Event Date" name="date" id="datepicker" required>
+  </div>
+  <div class="input-container">
+    <span class="material-icons icon">access_time</span>
+    <input class="input-field" type="time" placeholder="Starting Time" name="s_time" required>
+  </div>
+  <div class="input-container">
+    <span class="material-icons icon">access_time</span>
+    <input class="input-field" type="time" placeholder="End Time" name="e_time" required>
+  </div>
+  <div class="input-container">
+    <span class="material-icons icon">description</span>
+    <input class="input-field" type="text" placeholder="Event Description" name="desc" required maxlength="300">
+  </div>
+  <p class="event_type">
+  	<input  type="radio" id="seminar" name="event_type" value="seminar">
+  <label for="seminar" class="event-type-label">Seminar</label>
+  <input type="radio" id="Workshop" name="event_type" value="workshop">
+  <label for="workshop" class="event-type-label">Workshop</label>
+  </p>
+
+  <p class="ticket">
+    <input  type="radio" id="ticketed" name="event_price" value="ticketed">
+  <label for="ticketed" class="event-type-label">Ticketed</label>
+  <input type="radio" id="non-ticketed" name="event_price" value="non-ticketed">
+  <label for="non-ticketed" class="event-type-label">Non-Ticketed</label>
+  </p>
+  <br>
+  <div class="input-container">
+    <span class="material-icons icon">description</span>
+    <input class="input-field" type="text" placeholder="Ticket Price" name="value" required>
+  </div>
+  <button type="submit" class="get sign">Create Event</button>
+</form>
+</section>
+
+</body>
+</html>
